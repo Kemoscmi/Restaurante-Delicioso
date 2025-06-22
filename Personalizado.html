@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Personalizado.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Selecciona un idioma:</h2>
+    <select id="languageMenu" onchange="translatePage(this)">
+        <option value="">Idioma</option>
+        <option value="en">Inglés</option>
+        <option value="es">Español</option>
+        <option value="fr">Francés</option>
+        <option value="de">Alemán</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Portugués</option>
+    </select>
+
+    <script>
+        function translatePage(select) {
+            const lang = select.value;
+            if (lang) {
+                const currentUrl = window.location.href;
+                const translatedUrl = `https://translate.google.com/translate?hl=${lang}&sl=auto&u=${encodeURIComponent(currentUrl)}`;
+                window.location.href = translatedUrl;
+            }
+        }
+    </script>
+
+
+    <h1>Bienvenido a la página personalizada</h1>
+    <p>Esta es una página de ejemplo para mostrar cómo se puede personalizar la experiencia de traducción.</p>
+    <p>Selecciona un idioma del menú desplegable para traducir esta página.</p
+</body>
+
+</html>
