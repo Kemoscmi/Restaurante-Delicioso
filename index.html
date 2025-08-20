@@ -1,35 +1,518 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>GoogleTranslate</title>
+    <title>Mi Página</title>
+
+    <meta name="keywords" content="Google APIs, jQuery, traducción automática, JavaScript, desarrollo web">
+
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Íconos Bootstrap (para WhatsApp) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+
 </head>
 
+
+
 <body>
-    <div id="google_translate_element"></div>
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'en',
-                includedLanguages: 'es,en,fr,de,it,pt,zh-CN,ja,ko,ru,ar',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript"
-        src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+
+
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark  sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Restaurante Delicioso</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link btn-menu" href="#menu">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#opiniones">Opiniones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="preferencias.html">Preferencias</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- ===== Carousel ===== -->
+    <div id="carouselRestaurante" class="carousel slide h-100" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../img/Carousel1.jpg" class="d-block w-100" alt="Plato delicioso">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/Carousel2.jpg" class="d-block w-100" alt="Cena romántica">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/Carousel3.jpg" class="d-block w-100" alt="Postres">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/Carousel4.jpg" class="d-block w-100" alt="Postres">
+            </div>
+            <div class="carousel-item">
+                <img src="../img/Carousel5.jpg" class="d-block w-100" alt="Postres">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselRestaurante" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselRestaurante" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+
+    <!-- ===== Sección ¿Qué deseas comer? ===== -->
+    <section id="menu" class="py-5 bg-light ">
+        <div class="container">
+            <h2 class="text-center mb-4">¿Qué deseas comer?</h2>
+            <div class="row text-center g-4">
+                <!-- Categorías de comida -->
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="../img/desayunos.jpg" class="card-img-top" alt="Desayuno">
+                        <div class="card-body">
+                            <h5 class="card-title">Desayunos</h5>
+                            <a href="#desayunos" class="VerMas VerDesayunos">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="../img/bocadillos.png" class="card-img-top" alt="Bocadillos">
+                        <div class="card-body">
+                            <h5 class="card-title">Bocadillos</h5>
+                            <a href="#bocadillos" class="VerMas VerBocadillos">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="../img/bebidas Frias.png" class="card-img-top" alt="Bebidas frías">
+                        <div class="card-body">
+                            <h5 class="card-title">Bebidas frías</h5>
+                            <a href="#bebidas-frias" class="VerMas VerBebidasF">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="../img/bebidasCalientes.png" class="card-img-top" alt="Bebidas calientes">
+                        <div class="card-body">
+                            <h5 class="card-title">Bebidas calientes</h5>
+                            <a href="#bebidas-calientes" class="VerMas VerBebidasC">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="../img/postres.png" class="card-img-top" alt="Postres">
+                        <div class="card-body">
+                            <h5 class="card-title">Postres</h5>
+                            <a href="#postres" class="VerMas VerPostres">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow">
+                        <img src="../img/platosFuertes.webp" class="card-img-top" alt="Platos Fuertes">
+                        <div class="card-body">
+                            <h5 class="card-title">Platos Fuertes</h5>
+                            <a href="#platos-fuertes" class="VerMas VerPlatosF">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+      
+<!--Carrito de compras (usando jQuery)-->
+
+<div id="pestana-carrito" class="mostrar-solo-en-menu">
+  🛒
+</div>
+<aside id="carrito" class="carrito-discreto mostrar-solo-en-menu">
+
+  <h5 class="titulo-carrito">🛒 Tu Pedido</h5>
+
+  <!-- Lista donde se agregan dinámicamente los productos con jQuery -->
+  <ul id="listaPedido" class="list-group mb-3"></ul>
+
+  <p class="total-carrito text-end">
+    Total: ₡<span id="totalPedido">0</span>
+  </p>
+
+  <!-- Botón para simular el envío del pedido -->
+  <div class="d-grid">
+    <button id="btnEnviarPedido" class="btn btn-success w-100">Enviar Pedido</button>
+  </div>
+  <!-- Mensaje de confirmación cuando se agrega un producto -->
+  <!-- Se muestra con animación en jQuery -->
+  <div id="mensajeAgregado" class="alert alert-success mt-3 d-none text-center">
+    Producto agregado correctamente ✅
+  </div>
+
+</aside>
+    </section>
+
+    <!-- ===== Sección Listado de platillos por categoria ===== -->
+ <!-- ===== Sección Desayunos ===== -->
+    <section id="desayunos" class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-4">Desayunos</h2>
+          <a href="" class="cerrar">Cerrar</a>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 shadow cardPlatillo">
+                <img src="../img/gallo-pinto.jpg" class="card-img-top" alt="Gallo Pinto">
+                <div class="card-body">
+                  <h5 class="card-title">Gallo Pinto</h5>
+                  <p class="card-text">Con huevos, natilla y tortilla.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 shadow cardPlatillo">
+                <img src="../img/pancakes.jpg" class="card-img-top" alt="Panqueques">
+                <div class="card-body">
+                  <h5 class="card-title">Panqueques</h5>
+                  <p class="card-text">Con miel de maple y frutas frescas.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 shadow cardPlatillo">
+                <img src="../img/tostadas.jpg" class="card-img-top" alt="Tostadas">
+                <div class="card-body">
+                  <h5 class="card-title">Tostadas Francesas</h5>
+                  <p class="card-text">Servidas con fresas y crema batida.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       
+      </section>
+
+       <!-- ===== Sección bocadillos ===== -->
+      <section id="bocadillos" class="py-5 bg-light ">
+        <div class="container">
+          <h2 class="text-center mb-4">Bocadillos</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 shadow cardPlatillo">
+                <img src="../img/empanadas.jpg" class="card-img-top" alt="Empanadas">
+                <div class="card-body">
+                  <h5 class="card-title">Empanadas</h5>
+                  <p class="card-text">De queso, frijol o carne.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 shadow cardPlatillo">
+                <img src="../img/sanwich.jpeg" class="card-img-top" alt="Sandwich">
+                <div class="card-body">
+                  <h5 class="card-title">Sándwich clásico</h5>
+                  <p class="card-text">Jamón, queso y vegetales frescos.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 shadow cardPlatillo" >
+                <img src="../img/arepas.jpeg" class="card-img-top" alt="Arepas">
+                <div class="card-body">
+                  <h5 class="card-title">Arepas</h5>
+                  <p class="card-text">Rellenas con pollo o queso.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+      
+   <!-- ===== Sección Bebidas frías ===== -->
+   <section id="bebidas-frias" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Bebidas Frías</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/batidoFresa.jpeg" class="card-img-top" alt="Batido de fresa">
+            <div class="card-body">
+              <h5 class="card-title">Batido de Fresa</h5>
+              <p class="card-text">Natural, con leche o agua, servido frío.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/JugoN.jpg" class="card-img-top" alt="Jugo de naranja">
+            <div class="card-body">
+              <h5 class="card-title">Jugo de Naranja</h5>
+              <p class="card-text">100% natural y recién exprimido.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/tefrio.jpg" class="card-img-top" alt="Té frío">
+            <div class="card-body">
+              <h5 class="card-title">Té Frío</h5>
+              <p class="card-text">Con limón y hielo, ideal para el calor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- ===== Sección  Bebidas calientes ===== -->
+   <section id="bebidas-calientes" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Bebidas Calientes</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/cafeN.jpg" class="card-img-top" alt="Café">
+            <div class="card-body">
+              <h5 class="card-title">Café Negro</h5>
+              <p class="card-text">Clásico café costarricense.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/capuchino.webp" class="card-img-top" alt="Capuchino">
+            <div class="card-body">
+              <h5 class="card-title">Capuchino</h5>
+              <p class="card-text">Con espuma de leche y cacao.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/chocolate-caliente.jpg" class="card-img-top" alt="Chocolate caliente">
+            <div class="card-body">
+              <h5 class="card-title">Chocolate Caliente</h5>
+              <p class="card-text">Con leche y un toque de canela.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+<!-- ===== Sección  Postres ===== -->
+<section id="postres" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Postres</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/arrozConleche.jpeg" class="card-img-top" alt="Arroz con leche">
+            <div class="card-body">
+              <h5 class="card-title">Arroz con Leche</h5>
+              <p class="card-text">Con canela y leche condensada.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/Flan.webp" class="card-img-top" alt="Flan">
+            <div class="card-body">
+              <h5 class="card-title">Flan de Caramelo</h5>
+              <p class="card-text">Cremoso y con cobertura de caramelo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/helado.webp" class="card-img-top" alt="Helado">
+            <div class="card-body">
+              <h5 class="card-title">Helado Artesanal</h5>
+              <p class="card-text">Sabores naturales de temporada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Sección Platos Fuertes ===== -->
+  <section id="platos-fuertes" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Platos Fuertes</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/casado.webp" class="card-img-top" alt="Casado">
+            <div class="card-body">
+              <h5 class="card-title">Casado</h5>
+              <p class="card-text">Con arroz, frijoles, carne y ensalada.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/lasagna.png" class="card-img-top" alt="Lasaña">
+            <div class="card-body">
+              <h5 class="card-title">Lasaña</h5>
+              <p class="card-text">Rellena de carne, pasta y queso gratinado.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow cardPlatillo">
+            <img src="../img/pollo.jpg" class="card-img-top" alt="Pollo al horno">
+            <div class="card-body">
+              <h5 class="card-title">Pollo al Horno</h5>
+              <p class="card-text">Con papas sazonadas y vegetales al vapor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+    <!-- ===== Sección recomendada: Opiniones de clientes ===== -->
+    <section id="opiniones" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Opiniones de nuestros clientes</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <blockquote class="blockquote">
+                        <p>"¡La comida es espectacular y el servicio excelente!"</p>
+                        <footer class="blockquote-footer">María G.</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4">
+                    <blockquote class="blockquote">
+                        <p>"El ambiente es acogedor, ideal para una cena romántica."</p>
+                        <footer class="blockquote-footer">Carlos R.</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4">
+                    <blockquote class="blockquote">
+                        <p>"Volveré por esos postres, 100% recomendados."</p>
+                        <footer class="blockquote-footer">Ana T.</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ===== Localízanos ===== -->
+    <section id="localizacion" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">Localízanos</h2>
+            <p class="text-center mb-4">Nos encontramos frente a la iglesia de San Rafael de Alajuela, Costa Rica</p>
+            <div id="map" style="height: 500px;" class="shadow rounded"></div>
+            <p style="text-align: center; font-size: 30px;" id="distancia"></p>
+        </div>
+    </section>
+
+
+    <!-- ===== Footer ===== -->
+    <footer id="contacto" class="bg-dark text-light py-4">
+        <div class="container text-center">
+            <p>&copy; 2025 Restaurante Delicioso. Todos los derechos reservados.</p>
+            <p>
+                <a href="#" class="text-light text-decoration-none">Política de privacidad</a> |
+                <a href="#" class="text-light text-decoration-none">Términos de uso</a>
+            </p>
+            <p>Dirección: A un costado de la iglesia de Alajuela, Costa Rica.</p>
+            <p>Teléfono: +506 83673553 | Email: contacto@restaurante.com</p>
+        </div>
+    </footer>
+
+
+
+    <!-- ===== Botón Sticky de Contacto ===== -->
+    <a href="https://wa.me/50683673553" class="btn-sticky-contact" title="Contáctanos por WhatsApp">
+        <i class="bi bi-whatsapp fs-2"></i>
+    </a>
 
 
 
 
 
-    <h1>Google Translate Example</h1>
-    <p>This is a simple example of how to integrate Google Translate into a webpage.</p>
-    <h3><a href="Personalizado.html">Ir a la página personalizada</a></h3>
+
+
+
+
+    <!--   No tocar Lo que esta entre este comentario ya que es parte del Google APIS Translate  -->
+
+
+    <!--  En el siguiente div, lo que se realiza es que el usuario pueda seleccionar entre las opciones de idioma que aparecen.
+    Luego con el boton podrá Traducir toda la pagina, ya que este boton llama a la funcion "translatePage()" -->
+    <div class="ContenedorTraductor">
+        <select id="language">
+            <option value="es">Español</option>
+            <option value="fr">Français</option>
+            <option value="de">Deutsch</option>
+            <option value="en">English</option>
+        </select>
+        <button onclick="translatePage()" id="btnTranslate">Traducir página</button>
+    </div>
+
+
+    
+
+
+
+    <!-- Tu archivo JS personalizado (geolocalización, mapas, etc) -->
+    <script src="../js/ApiGoogle.js"></script>
+
+    <script src="../js/Translate.js"></script>
+
+
+    <!--   Esto es del maps -->
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBbkrVzOamquiClPKVcJyGtcQoACeH0JIU&callback=initMap&v=weekly&solution_channel=GMP_CCS_geolocation_v2">
+        </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--  Termina Google Apis Translate -->
+
+    <!--   Final Google Apis -->
+    <!--   Accerder al Main.js y a la libreria Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>    
+    
+    <script src="../js/Main.js"></script>
+    <!--   Fin Main.js y Jquery -->
+
 </body>
-
 
 </html>

@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Preferencias</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="../css/style.css"> 
+
+   
+</head>
+
+<body>
+
+    <header>
+        <!-- place navbar here -->
+        <!-- ===== Navbar ===== -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-color-secundario sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Restaurante Delicioso</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link btn-menu" href="#menu">Menú</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#opiniones">Opiniones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="preferencias.html">Preferencias</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+
+ <section id="menu" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4 text-brown">Preferencias de Nuestros Clientes...</h2>
+        <div class="row text-center g-4">
+            <!-- Desayunos -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow" role="button" data-bs-toggle="modal" data-bs-target="#modalGrafico">
+                    <img src="../img/desayunos.jpg" class="card-img-top" alt="Desayuno">
+                    <div class="card-body">
+                        <h5 class="card-title">Desayunos</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bocadillos -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow" role="button" data-bs-toggle="modal" data-bs-target="#modalBocadillos">
+                    <img src="../img/bocadillos.png" class="card-img-top" alt="Bocadillos">
+                    <div class="card-body">
+                        <h5 class="card-title">Bocadillos</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebidas Frías -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow" role="button" data-bs-toggle="modal" data-bs-target="#modalBebidasFrias">
+                    <img src="../img/bebidas Frias.png" class="card-img-top" alt="Bebidas frías">
+                    <div class="card-body">
+                        <h5 class="card-title">Bebidas frías</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bebidas Calientes -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow" role="button" data-bs-toggle="modal" data-bs-target="#modalBebidasCalientes">
+                    <img src="../img/bebidasCalientes.png" class="card-img-top" alt="Bebidas calientes">
+                    <div class="card-body">
+                        <h5 class="card-title">Bebidas calientes</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Postres -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow" role="button" data-bs-toggle="modal" data-bs-target="#modalPostres">
+                    <img src="../img/postres.png" class="card-img-top" alt="Postres">
+                    <div class="card-body">
+                        <h5 class="card-title">Postres</h5>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Platos Fuertes -->
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="card h-100 shadow" role="button" data-bs-toggle="modal" data-bs-target="#modalPlatosFuertes">
+                    <img src="../img/platosFuertes.webp" class="card-img-top" alt="Platos Fuertes">
+                    <div class="card-body">
+                        <h5 class="card-title">Platos Fuertes</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales -->
+    <!-- Modal Desayunos -->
+    <div class="modal fade" id="modalGrafico" tabindex="-1" aria-labelledby="modalDesayunosLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalDesayunosLabel">Desayunos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <div class="modal-body" >
+                    <div id="grafico_div" style="width:100%; height:300px;"></div>
+                </div>
+                    
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bocadillos -->
+    <div class="modal fade" id="modalBocadillos" tabindex="-1" aria-labelledby="modalBocadillosLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBocadillosLabel">Bocadillos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="grafico_div1" style="width:100%; height:300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bebidas Frías -->
+    <div class="modal fade" id="modalBebidasFrias" tabindex="-1" aria-labelledby="modalBebidasFriasLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBebidasFriasLabel">Bebidas Frías</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="grafico_div2" style="width:100%; height:300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Bebidas Calientes -->
+    <div class="modal fade" id="modalBebidasCalientes" tabindex="-1" aria-labelledby="modalBebidasCalientesLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalBebidasCalientesLabel">Bebidas Calientes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                     <div id="grafico_div3" style="width:100%; height:300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Postres -->
+    <div class="modal fade" id="modalPostres" tabindex="-1" aria-labelledby="modalPostresLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPostresLabel">Postres</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                   <div id="grafico_div4" style="width:100%; height:300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Platos Fuertes -->
+    <div class="modal fade" id="modalPlatosFuertes" tabindex="-1" aria-labelledby="modalPlatosFuertesLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPlatosFuertesLabel">Platos Fuertes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="grafico_div5" style="width:100%; height:300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <footer class="">
+        <!-- place footer here -->
+             <div class="container text-center">
+            <p>&copy; 2025 Restaurante Delicioso. Todos los derechos reservados.</p>
+            <p>
+                <a href="#" class="text-light text-decoration-none">Política de privacidad</a> |
+                <a href="#" class="text-light text-decoration-none">Términos de uso</a>
+            </p>
+            <p>Dirección:  A un costado de la iglesia de Alajuela, Costa Rica.</p>
+            <p>Teléfono: +506 1234-5678 | Email: contacto@restaurante.com</p>
+        </div>
+    </footer>
+
+    
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script src="../js/ChartsApi.js"></script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
